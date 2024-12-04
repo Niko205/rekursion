@@ -3,6 +3,15 @@ package strings
 // ContainsChain liefert true, falls s eine Kette von count aufeinanderfolgenden
 // Vorkommen von symbol enthält.
 func ContainsChain(s, symbol string, count int) bool {
+	if symbol == "" || count == 0 {
+		return true
+	}
+	chain := Chain(symbol, count)
+	return Contains(s, chain)
+}
+
+/*
+func ContainsChain(s, symbol string, count int) bool {
 	if s == "" && symbol == "" || count == 0 {
 		return true
 	} else if s == "" {
@@ -25,3 +34,4 @@ func LengthChain(s, symbol string) int {
 		return 0
 	}
 }
+*/
